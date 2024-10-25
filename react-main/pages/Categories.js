@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import './Categories.css'; 
+import './Style.css'; 
 
 const Categories = () => {
     const [categories, setCategories] = useState(null);
@@ -75,7 +75,7 @@ const Categories = () => {
 
             <h2>Create a New Category</h2>
 
-            {message && <div className="message">{message}</div>}
+            {message && <div className="cat-message">{message}</div>}
 
             <form onSubmit={createCategory} className="category-form">
                 <label htmlFor="categoryName">Category Name</label>
@@ -87,7 +87,7 @@ const Categories = () => {
                     placeholder="Enter category name"
                     required
                 />
-                <button type="submit" className="submit-button">Save Category</button>
+                <button type="submit" className="cat-submit-button">Save Category</button>
             </form>
         </div>
     );

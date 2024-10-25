@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import './Register.css'; 
+import './pages/Style.css'
 
 const Register = () => {
     const [username, setUsername] = useState("");
@@ -42,36 +42,36 @@ const Register = () => {
                     <p>Create a new account</p>
                 </div>
 
-                {message && <div className={`alert ${message.includes("failed") ? "alert-danger" : "alert-success"}`}>{message}</div>}
+                {message && <div className={`reg-alert ${message.includes("failed") ? "reg-alert-danger" : "reg-alert-success"}`}>{message}</div>}
 
                 <form onSubmit={handleRegister}>
-                    <div className="form-group mb-3">
+                    <div className="reg-form-group mb-3">
                         <label htmlFor="username">Username</label>
                         <input
                             type="text"
-                            className="form-control"
+                            className="reg-form-control"
                             id="username"
                             onChange={handleUsername}
                             placeholder="Enter Username"
                             required
                         />
                     </div>
-                    <div className="form-group mb-3">
+                    <div className="reg-form-group mb-3">
                         <label htmlFor="password">Password</label>
                         <input
                             type="password"
-                            className="form-control"
+                            className="reg-form-control"
                             id="password"
                             onChange={handlePassword}
                             placeholder="Enter Password"
                             required
                         />
                     </div>
-                    <div className="form-group mb-3">
+                    <div className="reg-form-group mb-3">
                         <label htmlFor="email">Email Address</label>
                         <input
                             type="email"
-                            className="form-control"
+                            className="reg-form-control"
                             id="email"
                             onChange={handleEmail}
                             placeholder="Enter Email Address"
@@ -80,7 +80,7 @@ const Register = () => {
                     </div>
                     <button
                         type="submit"
-                        className="btn btn-primary btn-block"
+                        className="reg-btn btn-primary btn-block"
                         disabled={loading}
                     >
                         {loading ? "Registering..." : "Register"}
