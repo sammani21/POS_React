@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import './Category.css'; // Separate CSS file for styling
+import './Style.css'; // Separate CSS file for styling
 
 const Category = () => {
     const params = useParams();
@@ -40,29 +40,29 @@ const Category = () => {
     };
 
     return (
-        <div className="category-container">
+        <div className="cate-container">
             {loading ? (
-                <p className="loading">Loading...</p>
+                <p className="loading1">Loading...</p>
             ) : error ? (
-                <p className="error-message">{error}</p>
+                <p className="error-message1">{error}</p>
             ) : (
                 <>
                     {category && (
-                        <h1 className="category-title">
+                        <h1 className="cate-title">
                             Products in {category.name} Category
                         </h1>
                     )}
                     
                     {products && products.length > 0 ? (
-                        <ul className="product-list">
+                        <ul className="cate-product-list">
                             {products.map((product, index) => (
-                                <li key={index} className="product-item">
+                                <li key={index} className="cate-product-item">
                                     {product.name}
                                 </li>
                             ))}
                         </ul>
                     ) : (
-                        <p className="no-products-message">No products available in this category.</p>
+                        <p className="cate-no-products-message">No products available in this category.</p>
                     )}
                 </>
             )}
